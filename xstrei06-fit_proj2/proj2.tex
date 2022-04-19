@@ -1,0 +1,135 @@
+\documentclass[twocolumn,11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1.5cm,text={18cm,25cm},top=2.5cm]{geometry}
+\usepackage{times}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\newtheorem{definice}{Definice}
+\newtheorem{veta}{Věta}
+\usepackage[IL2]{fontenc}
+\usepackage[czech]{babel}
+\usepackage{titlesec}
+\usepackage{setspace}
+
+
+\begin{document}
+\titlespacing*{\section}
+{0pt}{18pt}{10pt}
+\titlespacing*{\subsection}
+{0pt}{4pt}{6pt}
+\begin{titlepage}
+    \begin{center}
+        \Huge
+        \textsc{
+        Vysoké učení technické v Brně\\
+        \huge
+        Fakulta informačních technologií}\\
+        \vspace{\stretch{0.382}}
+        \LARGE
+        Typografie a publikování -- 2. projekt\\
+        Sazba dokumentů a matematických výrazů
+        \vspace{\stretch{0.618}}
+    \end{center}
+    {\Large 2022 \hfill Jaroslav Streit (xstrei06)}
+\end{titlepage}
+
+\section*{Úvod}
+
+V~této úloze si vyzkoušíme sazbu titulní strany, matematic\-kých vzorců, prostředí a dalších textových struktur obvyklých pro technicky zaměřené texty (například rovnice (\ref{rov}) nebo Definice \ref{def2} na straně \pageref{def2}). Pro vytvoření těchto odkazů používáme příkazy \verb=\label=, \verb=\ref= a \verb=\pageref=.
+
+Na titulní straně je využito sázení nadpisu podle op\-tického středu s~využitím zlatého řezu. Tento postup byl probírán na přednášce. Dále je na titulní straně použito odřádkování se zadanou relativní velikostí 0,4~em a 0,3~em.
+
+\section{Matematický text}
+
+Nejprve se podíváme na sázení matematických symbolů a~výrazů v~plynulém textu včetně sazby definic a vět s~vy\-užitím balíku \texttt{amsthm}. Rovněž použijeme poznámku pod čarou s~použitím příkazu \verb=\footnote=. Někdy je vhodné použít konstrukci \verb=${}$= nebo \verb=\mbox{}=, která říká, že (matematický) text nemá být zalomen.
+
+\begin{definice}
+\textup{Nedeterministický Turingův stroj} (NTS) je šes\-tice tvaru $\mathnormal{M = (Q,\Sigma,\Gamma,\delta,q\textsubscript{0},q_F)}$, \textit{kde}:
+\end{definice}
+\begin{itemize}
+\itemsep5pt
+    \item\textit{$\mathnormal{Q}$ je konečná množina} vnitřních (řídicích) stavů,
+    \item $\Sigma$ \textit{je konečná množina symbolů nazývaná} vstupní abeceda, $\Delta \not\in \Sigma$,
+    \item $\Gamma$ \textit{je konečná množina symbolů, $\Sigma \subset \Gamma,\:\Delta \in \Gamma$, nazývaná} pásková abeceda,
+    \item $\delta : (\mathnormal{Q}$ $\backslash$ $\{q_F\})\:\times$ $\Gamma \rightarrow 2^{\mathnormal{Q}\times(\Gamma\cup\{\mathnormal{L,R}\})}$, \textit{kde $\mathnormal{L,R} \not\in \Gamma$, je parciální} přechodová funkce, \textit{a}
+    \item $\mathnormal{q\textsubscript{0}} \in \mathnormal{Q}$ \textit{je} počáteční stav \textit{a} $q_F \in \mathnormal{Q}$ \textit{je} koncový stav.
+\end{itemize}
+
+Symbol $\Delta$ značí tzv. \textit{blank} (prázdný symbol), který se vyskytuje na místech pásky, která nebyla ještě použita.
+
+\textit{Konfigurace pásky} se skládá z~nekonečného řetězce, který reprezentuje obsah pásky, a pozice hlavy na tomto řetězci. Jedná se o~prvek množiny $\{\gamma\Delta^\omega \mid \gamma \in \Gamma^*\} \times \mathbb{N}\footnote{Pro libovolnou abecedu $\Sigma$ je $\Sigma^\omega$ množina všech \textit{nekonečných} řetězců nad $\Sigma$, tj. nekonečných posloupností symbolů ze $\Sigma$.}.$
+\textit{Konfiguraci pásky} obvykle zapisujeme jako $\Delta\mathnormal{xyz\underline{z}x}\Delta$\dots\\(podtržení značí pozici hlavy).
+\textit{Konfigurace stroje} je pak dána stavem řízení a konfigurací pásky. Formálně se jedná o~prvek množiny $\mathnormal{Q} \times \{\gamma\Delta^\omega \mid \gamma \in \Gamma^*\} \times \mathbb{N}$.
+\bigskip
+
+\subsection{Podsekce obsahující definici a větu}
+
+\begin{definice}\label{def2}
+\textup{Řetězec $\mathnormal{w}$ nad abecedou $\Sigma$ je přijat NTS}~$\mathnormal{M}$, jestliže $\mathnormal{M}$ při aktivaci z~počáteční konfigurace pásky $\underline{\Delta}w\Delta$ \dots a počátečního stavu $q_0$ může zastavit přechodem do koncového stavu $q_F$, tj. $(q_0,\Delta w\Delta^\omega,0) \underset{M}{\overset{*}{\vdash}}(q_F,\gamma,n)$ pro nějaké $\gamma \in \Gamma^*\;\textit{a}\mathnormal{\;n} \in \mathbb{N}$.
+
+\textit{Množinu} $L(M) = \{w \mid w$ \textit{je přijat}
+NTS$\;M\} \subseteq\Sigma^*$ \textit{nazýváme} \textup{jazyk přijímaný NTS} $M$.
+\end{definice}
+
+Nyní si vyzkoušíme sazbu vět a důkazů opět s~použitím balíku \verb=amsthm=.
+
+\begin{veta}
+Třída jazyků, které jsou přijímány NTS, odpovídá \textup{rekurzivně vyčíslitelným jazykům.}
+\end{veta}
+
+\section{Rovnice}
+\label{rov}
+
+Složitější matematické formulace sázíme mimo plynulý text. Lze umístit několik výrazů na jeden řádek, ale pak je třeba tyto vhodně oddělit, například příkazem \verb=\quad=.
+
+\begin{align}
+x^2 - \sqrt[4]{y_1 * y_2^3} \quad x > y_1 \geq y_2 \quad z_{z_z} \neq \alpha_1^{\alpha_2^{\alpha_3}}\nonumber
+\end{align}
+
+V~rovnici (\ref{rov1}) jsou využity tři typy závorek s~různou explicitně definovanou velikostí.
+
+\begin{align}\label{rov1}
+    & x \;\;=\;\; \bigg\{a\oplus\Big[b \cdot (c\ominus d)\Big]\bigg\}^{4\slash 2}\\
+    & y \;\;=\;\; \displaystyle\lim_{\beta \to \infty}\genfrac{}{}{1.5pt}{}{\mathrm{tan}^2\,\beta - \mathrm{sin}^3\,\beta}{\genfrac{}{}{1.5pt}{}{1}{\genfrac{}{}{1.5pt}{}{1}{\mathrm{log}_{42} x}+\genfrac{}{}{1.5pt}{}{1}{2}}}
+\end{align}
+
+V~této větě vidíme, jak vypadá implicitní vysázení li\-mity $\lim_{n \to \infty}f(n)$ v~normálním odstavci textu. Podobně je to i s~dalšími symboly jako $\bigcup_{N \in \mathcal{M}}N$ či $\sum_{j=0}^n x_j^2$. 
+S~vy\-nucením méně úsporné sazby příkazem \verb=\limits= budou vzorce vysázeny v~podobě $\displaystyle\lim_{n 
+\to \infty}f(n)$ a $\sum\limits_{j=0}^n x_j^2$.
+
+\section{Matice}
+
+Pro sázení matic se velmi často používá prostředí \verb=array= a závorky \verb=(\left=, \verb=\right)=. 
+
+\bigskip
+\bigskip
+
+\noindent$\textbf{A} = 
+\left|
+\begin{array}{cccc}
+    a_{11} & a_{12} & \cdots & a_{1n}\\
+    a_{21} & a_{22} & \cdots & a_{2n}\\
+    \vdots & \vdots & \ddots & \vdots\\
+    a_{m1} & a_{m2} & \cdots & a_{mn}\\
+\end{array}\right| = 
+\left|
+\begin{array}{cc}
+    t & u\\
+    v & w\\
+\end{array}\right|
+= tw - uv$
+
+\bigskip
+
+Prostředí \verb=array= lze úspěšně využít i jinde.
+
+
+$$\mathrm{\binom{\mathnormal{n}}{\mathnormal{k}}} = \left\{ 
+    \begin{array}{c l}
+        \frac{n!}{k!(n-k)!} & \textup{pro\;0} \leq k \leq n \\
+        0 & \textup{pro}\;k > n\;\textup{nebo}\;k < 0
+    \end{array} \right.$$
+\end{document}
