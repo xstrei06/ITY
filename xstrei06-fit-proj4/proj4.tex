@@ -1,0 +1,74 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=2cm,text={17cm,24cm},top=3cm]{geometry}
+\usepackage[czech]{babel}
+\usepackage[IL2]{fontenc}
+\usepackage{verbatim}
+\usepackage{times}
+\usepackage[hidelinks, unicode]{hyperref}
+\usepackage{url}
+%\usepackage{amssymb}
+
+
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \Huge
+        \textsc{
+        Vysoké učení technické v Brně\\[-0,2cm]
+        \huge
+        Fakulta informačních technologií}\\
+        \end{center}
+        \begin{center}
+        \vspace{\stretch{0.382}}
+        \LARGE
+        Typografie a publikování\,--\,3. projekt\\
+        \Huge
+        Bibliografické citace
+        \vspace{\stretch{0.618}}
+    
+    {\Large \today \hfill Jaroslav Streit}
+    \end{center}
+    
+\end{titlepage}
+\section{Typografie}
+
+Pod pojmem typografie bychom si měli představit umělecko-technickou disciplínu, zabývající se písmem, jeho tiskovým zpracováním a vhodnou sazbou\cite{Knytl2020}.
+
+Základní pojem, se kterým se v této disciplíně setkáme nejčastěji, je písmo. Lidé využívají písmo už dlouhá staletí, ba i tisíceletí, ale významný přelom pro typografii, jak ji známe dnes, nastal někdy v polovině 15. století, kdy Johannes Gutenberg přišel s vynálezem knihtisku\cite{berger1996johann}.
+
+V současné době se rozlišuje několik typů klasifikací písma, například na webových stránkách jich můžeme nalézt šest (serif, sans-serif, monospaced, kurzívní, fantazie, skript), viz \cite{Kyrnin2017}. Vhodně zvolené písmo je základ úspěchu každého typografického díla. Písmo může dělit například na patkové, které je vhodné zejména do knih, protože pomáhá čtenáři lépe se držet na řádku\cite{arditi2005serifs}, nebo bezpatkové, které se současně stává více a více populárním, zejména v elektronické formě. Dalším důležitým aspektem volby vhodného písma je jeho velikost. Nejčastější velikost běžného textu bývá 12b. Větší písmo se používá zejména pro nadpisy nebo prezentace, naopak menší písmo například pro poznámky pod čarou. Více o vhodné volbě písma a dalších vlastnostech písma viz\cite{Cvingrafova2011}. 
+
+Písmo se dále dělí také do tzv. \uv{rodin}, kde každá rodina má svoje jméno a charakteristickou kresbu. Rodiny sdružují dohromady písma stejného druhu. Příkladem hojně užívané rodiny písma je například \textit{Times} viz\cite{Sirucek2006}.
+
+V časopise \textit{Souvislosti}\cite{Souvislosti1999} se můžeme dočíst, že typografie je vlastně určitý druh umění, srovnatelný s~malířstvím nebo sochařstvím.
+
+\section{Typografické nástroje}
+
+Důležitou součástí typografie jsou samozřejmě i nástroje, které využíváme k tvorbě dokumentů. 
+
+Asi nejvíce populárním nástrojem je MS Word zejména pro jeho jednoduchost a snadné vysázení základních konstrukcí. Ovšem pokud bychom chtěli vytvářet složitější konstrukce, jako například různé matematické vzorce, náročnost jde prudce nahoru a v některých případech je to až nemožné\cite{miktex}. 
+
+Proto si myslím, že je vhodné naučit se zacházet s nástrojem jako je \LaTeX . Přidává tomu také fakt, že konvertování dokumentů z MS Word do \LaTeX u nebo obráceně je velmi náročné\cite{stone2017converting} a proto je vhodné využívat pouze jeden nástroj a to \LaTeX, i přesto, že jednoduché dokumenty jsou s ním náročnější na vysázení.
+
+Jako příklad složítějšího matematického vzorce vysázeného nástrojem \LaTeX si můžeme představit\cite{Gratzer1996}:
+
+$$
+\biggl( \prod^n_{\, j = 1} \hat x_{j} \biggr) H_{c} =
+\frac{1}{2} \hat k_{ij} \det \hat{ \mathbf{K} }(i|i)
+$$
+
+nebo:
+
+$$
+\int_{\mathcal{D}} | \overline{\partial u} |^{2}
+\Phi_{0}(z) e^{\alpha |z|^2} \geq c_{4} \alpha \int_{\mathcal{D}} |ul^{2} \Phi_{0} e^{\alpha |z|^{2}} + c_{5} \delta^{-2} \int_{A} |u|^{2} \Phi_{0} e^{\alpha |z|^{2}}.
+$$
+    
+
+\newpage
+	\bibliographystyle{czechiso}
+	\renewcommand{\refname}{Použitá literatura}
+	\bibliography{zdroje}
+
+\end{document}
